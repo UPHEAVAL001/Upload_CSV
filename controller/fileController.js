@@ -78,15 +78,15 @@ const fileDelete = asyncHandler(async (req, res) => {
          await File.deleteOne({ file: filename });
          console.log("file is deleted ");
          //return res.redirect("/");
-         return res.status(200).json({
-            message: "File Deleted Successfully",
-         });
+         // return res.status(200).json({
+         //    message: "File Deleted Successfully",
+         // });
       } else {
          console.log("file not found");
-         //return res.redirect("/");
-         return res.status(404).json({
-            message: "File Not Found",
-         });
+         return res.redirect("/");
+         // return res.status(404).json({
+         //    message: "File Not Found",
+         // });
       }
    } catch (error) {
       console.log(error);
